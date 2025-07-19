@@ -3,8 +3,10 @@ import { styles } from "@/styles/_joinstyle";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { FACEBOOK, GOOGLELOGO, HEROLOGOGREEN } from "@/constants";
+import { useRouter } from "expo-router";
 
-export default function Index() {
+export default function SignIn() {
+    const router = useRouter();
     return (
         <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
@@ -75,7 +77,9 @@ export default function Index() {
                 {/* Join Now Link */}
                 <View style={styles.signupgroup}>
                     <Text style={styles.signupTitleText}>Don't have an account? </Text>
-                    <Text style={styles.signupSubTitleText}>Join now</Text>
+                    <TouchableOpacity onPress={() => router.push("/join")}>
+                        <Text style={styles.signupSubTitleText}>Join</Text>
+                    </TouchableOpacity>
                 </View>
             </SafeAreaView>
         </SafeAreaProvider>

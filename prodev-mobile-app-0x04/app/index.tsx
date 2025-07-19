@@ -24,14 +24,25 @@ export default function Index() {
                         </View>
 
                         <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
-                            <View style={styles.buttonGroup}>
-                                <TouchableOpacity style={styles.button} >
-                                    <Text style={{ ...styles.textSmall, color: "black" }}>Join here</Text>
-                                </TouchableOpacity>
+                            <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
+                                <View style={styles.buttonGroup}>
+                                    <TouchableOpacity
+                                        style={styles.button}
+                                        onPress={() => router.push("/join")}
+                                    >
+                                        <Text style={{ ...styles.textSmall, color: "black" }}>Join here</Text>
+                                    </TouchableOpacity>
 
-                                <TouchableOpacity style={styles.transparentButton}>
-                                    <Text style={styles.textSmall}>Sign In</Text>
-                                </TouchableOpacity>
+                                    <TouchableOpacity
+                                        style={styles.transparentButton}
+                                        onPress={() => router.push("/signin")}
+                                    >
+                                        <Text style={styles.textSmall}>Sign In</Text>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={{ alignItems: "center", paddingVertical: 20 }}>
+                                    <Text style={{ color: "white" }}>Continue to home</Text>
+                                </View>
                             </View>
                             <View style={{ alignItems: "center", paddingVertical: 20 }}>
                                 <Text style={{ color: "white" }}>Continue to home</Text>
