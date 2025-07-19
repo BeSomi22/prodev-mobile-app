@@ -1,16 +1,20 @@
 import { Text, View, ImageBackground, Dimensions, TouchableOpacity, Image, StyleSheet } from "react-native";
+import { BACKGROUNDIMAGE, HEROLOGO } from "@/constants";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
+
 
 export default function Index() {
+    const router = useRouter();
     return (
         <SafeAreaProvider>
             <SafeAreaView style={{ flex: 1 }}>
-                <ImageBackground source={require("@/assets/images/background-image.png")}
+                <ImageBackground source={BACKGROUNDIMAGE}
                     style={styles.background}
                     resizeMode="cover">
                     <View style={styles.container}>
                         <View style={styles.companyLogo}>
-                            <Image source={require("@/assets/images/Logo.png")} />
+                            <Image source={HEROLOGO} />
                         </View>
 
                         <View style={styles.textGroup}>
@@ -21,7 +25,7 @@ export default function Index() {
 
                         <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
                             <View style={styles.buttonGroup}>
-                                <TouchableOpacity style={styles.button}>
+                                <TouchableOpacity style={styles.button} >
                                     <Text style={{ ...styles.textSmall, color: "black" }}>Join here</Text>
                                 </TouchableOpacity>
 
